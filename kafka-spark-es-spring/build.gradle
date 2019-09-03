@@ -14,6 +14,10 @@ configurations {
     }
 }
 
+configurations.compile {
+    exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+}
+
 repositories {
     mavenCentral()
 }
@@ -22,5 +26,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    compile group: 'org.apache.spark', name: 'spark-core_2.11', version: '2.4.3'
+    compile group: 'org.apache.spark', name: 'spark-streaming_2.11', version: '2.4.3'
+    compile group: 'org.apache.spark', name: 'spark-streaming-kafka-0-10_2.11', version: '2.4.3'
+    compile group: 'org.elasticsearch', name: 'elasticsearch-spark-20_2.11', version: '7.2.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
