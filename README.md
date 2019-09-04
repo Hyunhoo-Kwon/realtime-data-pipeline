@@ -23,11 +23,11 @@
 ![출처: https://www.niceideas.ch/roller2/badtrash/entry/lambda-architecture-with-kafka-elasticsearch](https://www.niceideas.ch/roller2/badtrash/mediaresource/f36e9948-0053-4f07-a0ff-a1ebca0b5762)
 #### 1. Speed Layer
 1. Kafka + Spark Streaming + Elasticsearch 예제
-    1. Kafka + Spark Streaming + Elasticsearch with Java
-    2. Kafka + Spark Streaming + Elasticsearch with Spring boot (Java)
+    1. [Kafka + Spark Streaming + Elasticsearch with Java](https://github.com/Hyunhoo-Kwon/realtime-data-pipeline/tree/master/kafka-spark-es-java)
+    2. Kafka + Spark Streaming + Elasticsearch with Spring boot
 2. RabbitMQ + Spark Streaming + Elasticsearch 예제
     1. RabbitMQ + Spark Streaming + Elasticsearch with Java
-    2. RabbitMQ + Spark Streaming + Elasticsearch with Spring boot (Java)
+    2. RabbitMQ + Spark Streaming + Elasticsearch with Spring boot
 #### 2. Batch Layer
 
 ## 참고 자료
