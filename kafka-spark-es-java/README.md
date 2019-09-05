@@ -160,7 +160,7 @@ shadowJar {
 ```
 > build/libs/kafka-spark-es-java-1.0-SNAPSHOT-all.jar 생성
 
-#### spark submit
+#### 2. spark submit
 - Spark deploying: https://spark.apache.org/docs/latest/cluster-overview.html
 1. standalone 클러스터 실행
 ```
