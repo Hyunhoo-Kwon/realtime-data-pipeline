@@ -24,7 +24,7 @@
 #### 1. Speed Layer
 1. Kafka + Spark Streaming + Elasticsearch 예제
     1. [Kafka + Spark Streaming + Elasticsearch with Java](https://github.com/Hyunhoo-Kwon/realtime-data-pipeline/tree/master/kafka-spark-es-java)
-    2. Kafka + Spark Streaming + Elasticsearch with Spring boot
+    2. [Kafka + Spark Streaming + Elasticsearch with Spring boot](https://github.com/Hyunhoo-Kwon/realtime-data-pipeline/tree/master/kafka-spark-es-spring)
 2. RabbitMQ + Spark Streaming + Elasticsearch 예제
     1. RabbitMQ + Spark Streaming + Elasticsearch with Java
     2. RabbitMQ + Spark Streaming + Elasticsearch with Spring boot
