@@ -133,5 +133,43 @@ streamingContext.start();
 streamingContext.awaitTermination();
 ```
 
+## 배포
+#### 1. uber jar
+- Shadow documentation: https://imperceptiblethoughts.com/shadow/introduction/
+- [build.gradle](https://github.com/Hyunhoo-Kwon/realtime-data-pipeline/blob/master/kafka-spark-es-java/build.gradle)
+```
+plugins {
+    ...
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
+}
+
+...
+
+shadowJar {
+    zip64 true
+    manifest {
+        attributes(
+                'Main-Class': "com.study.kfakasparkesjava.WordCountApplication"
+        )
+    }
+}
+```
+> uber jar 생성을 위해 shadowJar 플러그인 설정
+```
+./gradlew shadowJar
+```
+> build/libs/kafka-spark-es-java-1.0-SNAPSHOT-all.jar 생성
+
+#### spark submit
+- Spark deploying: https://spark.apache.org/docs/latest/cluster-overview.html
+1. standalone 클러스터 실행
+```
+./bin/spark-submit \
+--master local[2] \
+realtime-data-pipeline/kafka-spark-es-spring/build/libs/kafka-spark-es-spring-0.0.1-SNAPSHOT-all.jar
+```
+2. spark admin page
+    - http://localhost:4040
+
 ## 참고 자료
-- https://www.baeldung.com/kafka-spark-data-pipeline
+- kafka-spark 예제: https://www.baeldung.com/kafka-spark-data-pipeline
