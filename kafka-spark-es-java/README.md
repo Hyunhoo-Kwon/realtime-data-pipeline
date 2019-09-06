@@ -111,6 +111,16 @@ JavaPairDStream<String, String> results = stream.mapToPair(record -> new Tuple2<
 JavaDStream<String> lines = results.map(tuple2 -> tuple2._2());
 JavaDStream<String> words = lines.flatMap(x -> Arrays.asList(x.split("\\s+")).iterator());
 JavaPairDStream<String, Integer> wordCounts = words.mapToPair(s -> new Tuple2<>(s, 1)).reduceByKey((i1, i2) -> i1 + i2);
+
+// results.print();
+```
+- print
+```
+-------------------------------------------
+Time: 1567734820000 ms
+-------------------------------------------
+(key1,This is a message)
+(key2,This is another message)
 ```
 
 #### 4. Persisting Processed DStream into Elasticsearch
@@ -122,10 +132,27 @@ esConf.put("es.index.auto.create", "true");
 esConf.put("es.nodes", "localhost");
 esConf.put("es.port", "9200");
 JavaEsSparkStreaming.saveToEsWithMeta(wordCountsMap, "spark", esConf);
+
+// wordCountsMap.print();
 ```
 - elasticsearch-spark support: https://www.elastic.co/guide/en/elasticsearch/hadoop/master/spark.html
 - elasticsearch-hadoop configuration: https://www.elastic.co/guide/en/elasticsearch/hadoop/master/configuration.html
 > Map 또는 JavaBean인 RDD를 elasticsearch에 저장
+
+- print
+```
+-------------------------------------------
+Time: 1567734900000 ms
+-------------------------------------------
+(is,{count=2})
+(This,{count=2})
+(another,{count=1})
+(a,{count=1})
+(message,{count=2})
+```
+
+- es spark 인덱스: document 확인
+    - http://localhost:9200/spark/_doc/This
 
 #### 5. Running the Application
 ```
