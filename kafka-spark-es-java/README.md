@@ -4,7 +4,7 @@ This tutorial will use:
 - Java8
 - Gradle
 - Kafka
-- Spark Streming
+- Spark Streaming
 - Elasticsearch
 
 ## 로컬 테스트 환경 설정
@@ -48,7 +48,7 @@ This tutorial will use:
     bin/kafka-topics.sh --list --bootstrap-server localhost:9092
     ```
 3. Send some messages
-    - Run procedure (Command line client)
+    - Run producer (Command line client)
     ```
     // key 옵션: --property "parse.key=true" --property "key.separator=:"
     
