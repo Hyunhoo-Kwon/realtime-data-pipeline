@@ -4,7 +4,7 @@ This tutorial will use:
 - Java8
 - Gradle
 - Kafka
-- Spark Stremaing
+- Spark Streming
 - Elasticsearch
 
 ## 로컬 테스트 환경 설정
