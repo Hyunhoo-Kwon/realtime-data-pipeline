@@ -8,7 +8,8 @@
 - 대용량의 데이터를 배치 처리와 실시간 처리로 대용량의 데이터를 빠르고 안전하게 처리하며 배치 뷰와 실시간 뷰를 조합하여 빠르게 실시간 분석을 할 수 있다
 
 #### 2. 람다 아키텍처 구조
-![출처: http://lambda-architecture.net](http://lambda-architecture.net/img/la-overview.png)
+<img width="600" alt="출처: http://lambda-architecture.net" src="http://lambda-architecture.net/img/la-overview.png">
+
 1. 시스템의 모든 데이터는 batch layer와 speed layer 모두에 전달
 2. batch layer: raw data가 저장되 있고, batch 처리하여 batch view 생성
 3. serving layer: batch로 만들어진 데이터 (batch view) 저장
