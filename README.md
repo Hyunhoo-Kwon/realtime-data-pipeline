@@ -26,7 +26,7 @@
 
 #### 2. 실시간 처리 프레임워크
 - Flink
-- Spark Streaming
+- [Spark Streaming](https://github.com/Hyunhoo-Kwon/realtime-data-pipeline/wiki/Spark-Streaming)
 
 #### 3. 저장소
 - Elasticsearch
