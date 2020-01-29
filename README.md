@@ -3,7 +3,6 @@
 
 ## 데이터 파이프라인 아키텍처
 ### 람다 아키텍처 (Lambda Architecture)
-
 #### 1. 람다 아키텍처란
 - 람다 아키텍처는 배치 및 스트림 처리 방법을 모두 활용하여 방대한 양의 데이터를 처리하도록 설계된 데이터 아키텍처
 - 대용량의 데이터를 배치 처리와 실시간 처리로 대용량의 데이터를 빠르고 안전하게 처리하며 배치 뷰와 실시간 뷰를 조합하여 빠르게 실시간 분석을 할 수 있다
@@ -19,7 +18,20 @@
 
 ***
 
-## 데이터 분석 플랫폼 구조
+## 데이터 분석 플랫폼
+### 데이터 분석 플랫폼 종류
+#### 1. 메세지 큐
+- Kafka
+- RabbitMQ
+
+#### 2. 실시간 처리 프레임워크
+- Flink
+- Spark Streaming
+
+#### 3. 저장소
+- Elasticsearch
+
+### 데이터 분석 플랫폼 구조
 ![출처: https://www.niceideas.ch/roller2/badtrash/entry/lambda-architecture-with-kafka-elasticsearch](https://www.niceideas.ch/roller2/badtrash/mediaresource/f36e9948-0053-4f07-a0ff-a1ebca0b5762)
 #### 1. Speed Layer
 1. Kafka + Spark Streaming + Elasticsearch 예제
