@@ -4,18 +4,22 @@
 ## 데이터 파이프라인 아키텍처
 ### 람다 아키텍처 (Lambda Architecture)
 #### 1. 람다 아키텍처란
-- 람다 아키텍처는 배치 및 스트림 처리 방법을 모두 활용하여 방대한 양의 데이터를 처리하도록 설계된 데이터 아키텍처
-- 대용량의 데이터를 배치 처리와 실시간 처리로 대용량의 데이터를 빠르고 안전하게 처리하며 배치 뷰와 실시간 뷰를 조합하여 빠르게 실시간 분석을 할 수 있다
+- 람다 아키텍처는 주기적으로 배치 처리를 수행하는 전통적인 아키텍처에 짧은 지연 시간을 제공하는 스트림 처리 기반의 스피드 계층을 추가한 데이터 아키텍처
 
 #### 2. 람다 아키텍처 구조
-<img width="600" alt="출처: http://lambda-architecture.net" src="http://lambda-architecture.net/img/la-overview.png">
+<img width="600" alt="출처: https://www.oreilly.com/library/view/stream-processing-with/9781491974285/assets/spaf_0107.png" src="https://www.oreilly.com/library/view/stream-processing-with/9781491974285/assets/spaf_0107.png">
 
-1. 시스템의 모든 데이터는 batch layer와 speed layer 모두에 전달
-2. batch layer: raw data가 저장되 있고, batch 처리하여 batch view 생성
-3. serving layer: batch로 만들어진 데이터 (batch view) 저장
-4. speed layer: 실시간 데이터 처리
-5. query를 통해 batch view와 realtime-view를 병합하여 조회
-- 새로운 데이터는 batch layer와 speed layer에서 동시에 처리된다. batch layer는 주기적으로 집계 작업을 수행하여 batch view를 생성한다. speed layer는 최신 정보를 반영하도록 설계되었으며 batch view에서 아직 생성되지 않은 실시간 데이터 집계를 계산한다.
+- 람다 아키텍처 구조
+  - 시스템의 모든 데이터는 스트림 처리기와 배치 저장소로 데이터 전송
+  - 스트림 처기리는 실시간으로 연산을 수행해 이를 스피드 테이블에 저장
+  - 배치 처리기는 주기적으로 배치 저장소에 있는 데이터를 처리하고 정확한 결과를 배치 테이블에 쓰고, 관련 있는 스피드 테이블의 부정확한 결과는 버린다
+  - 애플리케이션은 스피드 테이블의 결과와 배치 테이블의 결과를 병합하여 조회한다
+  
+- 람다 아키텍처의 목표와 한계
+  - 목표: 람다 아키텍처의 목표는 배치 분석 아키텍처 결과의 늦은 지연 시간을 보완하기 위한 것이다
+  - 한계:
+    - 서로 다른 이벤트 처리 시스템이 각각의 API를 이용해 의미적으로 동일한 애플리케이션을 두 벌 구현해야 한다
+    - 람다 아키텍처를 설치하고 유지 보수하기가 어렵다
 
 ***
 
@@ -43,4 +47,5 @@
 
 ## 참고 자료
 - http://lambda-architecture.net
+- https://www.oreilly.com/library/view/stream-processing-with/9781491974285/ch01.html#fig-lambda-arch
 - https://www.niceideas.ch/roller2/badtrash/entry/lambda-architecture-with-kafka-elasticsearch
