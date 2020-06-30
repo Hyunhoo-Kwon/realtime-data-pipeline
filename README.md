@@ -45,7 +45,7 @@
     1. RabbitMQ + Spark Streaming + Elasticsearch with Java
 #### 2. Batch Layer
 
-## 참고 자료
+## 참고
 - http://lambda-architecture.net
 - https://www.oreilly.com/library/view/stream-processing-with/9781491974285/ch01.html#fig-lambda-arch
 - https://www.niceideas.ch/roller2/badtrash/entry/lambda-architecture-with-kafka-elasticsearch
